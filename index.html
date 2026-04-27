@@ -446,7 +446,9 @@ adminListClose.onclick = () => {
     adminListContent.innerHTML = "";
 };
 
-adminListPassword.oninput = () => {
+adminListPassword.addEventListener("keydown", (e) => {
+    if(e.key !== "Enter") return;
+
     if(adminListPassword.value !== ADMIN_PASSWORD){
         alert("Złe hasło");
         return;
